@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
         sort(nums1.begin(), nums1.end());
         sort(nums2.begin(), nums2.end());
         vector<int> intersec;
@@ -21,7 +21,7 @@ int main(void) {
     Solution s;
     vector<int> nums1 = {4,9,5};
     vector<int> nums2 = {9,4,9,8,4};
-    vector<int> intersec = s.intersection(nums1, nums2);
+    vector<int> intersec = s.intersect(nums1, nums2);
     for (int i : intersec) cout << i << " ";
     return 0;
 }
