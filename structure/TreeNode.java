@@ -33,4 +33,28 @@ public class TreeNode {
         }
         return treeNodes[0];
     }
+
+    // print the tree in DFS PreOrder
+    public static void printPreOrder(TreeNode root) {
+        if (root == null) return;
+        System.out.println(root.val);
+        printPreOrder(root.left);
+        printPreOrder(root.right);
+    }
+
+    // print the tree in DFS InOrder
+    public static void printInOrder(TreeNode root) {
+        if (root == null) return;
+        printInOrder(root.left);
+        System.out.println(root.val);
+        printInOrder(root.right);
+    }
+
+    // print the tree in DFS PostOrder
+    public static void printPostOrder(TreeNode root) {
+        if (root == null) return;
+        printPostOrder(root.left);
+        printPostOrder(root.right);
+        System.out.println(root.val);
+    }
 }
