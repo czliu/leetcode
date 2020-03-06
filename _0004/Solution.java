@@ -1,5 +1,6 @@
 // 0004. Median of Two Sorted Arrays
 // 二分法
+// 复习
 
 package _0004;
 
@@ -7,41 +8,33 @@ package _0004;
 
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int n1 = nums1.length;
-        int n2 = nums2.length;
-        if (n1 > n2) return findMedianSortedArrays(nums2, nums1);
-        // so now we have n1 <= n2
-        // nums1: 0~i-1 | i~n1-1
-        // nums2: 0~j-1 | j~n2-1
-        // condition: nums1[i-1] <= nums2[j]; nums2[j-1] <= nums1[i]
-        // special case: i == 0; j == 0; i == n1; j == n2
-        if (n1 == 0 && n2 == 0) return 0.0;
-        else if (n1 == 0) {
-            if (n2 % 2 == 0) return (nums2[n2/2-1] + nums2[n2/2]) / 2.0;
-            else return nums2[n2/2];
-        }
-        int left=0, right=n1-1; // left and right index of nums1
-        int k=(n1+n2+1)/2; // total number of items on the left
-        while (left <= right) {
-            int i = left + (right - left)/2 + 1;
-            int j = k - i;
-            if (i < right && nums1[i] < nums2[j-1]) left = i + 1;
-            else if ( i > left && nums1[i-1] > nums2[j]) right = i - 1;
+        int n = nums1.length;
+        int m = nums2.length;
+        int left = (n + m + 1) / 2;
+        int right = (n + m + 2) / 2;
+        //将偶数和奇数的情况合并，如果是奇数，会求两次同样的 k 。
+        return (getKth(nums1, 0, n - 1, nums2, 0, m - 1, left) + getKth(nums1, 0, n - 1, nums2, 0, m - 1, right)) * 0.5;  
+    }
+        
+        private int getKth(int[] nums1, int start1, int end1, int[] nums2, int start2, int end2, int k) {
+            int len1 = end1 - start1 + 1;
+            int len2 = end2 - start2 + 1;
+            //让 len1 的长度小于 len2，这样就能保证如果有数组空了，一定是 len1 
+            if (len1 > len2) return getKth(nums2, start2, end2, nums1, start1, end1, k);
+            if (len1 == 0) return nums2[start2 + k - 1];
+    
+            if (k == 1) return Math.min(nums1[start1], nums2[start2]);
+    
+            int i = start1 + Math.min(len1, k / 2) - 1;
+            int j = start2 + Math.min(len2, k / 2) - 1;
+    
+            if (nums1[i] > nums2[j]) {
+                return getKth(nums1, start1, end1, nums2, j + 1, end2, k - (j - start2 + 1));
+            }
             else {
-                int maxLeft = 0;
-                if (i == 0) maxLeft = nums2[j-1];
-                else if (j == 0) maxLeft = nums1[i-1];
-                else maxLeft = Math.max(nums1[i-1], nums2[j-1]);
-                if ((n1+n2)%2 == 1) return maxLeft;
-                int minRight = 0;
-                if (i == n1) minRight = nums2[j];
-                else if (j == n2) minRight = nums1[i];
-                else minRight = Math.min(nums1[i], nums2[j]);
-                return (maxLeft + minRight) / 2.0;
+                return getKth(nums1, i + 1, end1, nums2, start2, end2, k - (i - start1 + 1));
             }
         }
-        return 0.0;
-    }
 
     public static void main(String[] args) {
         Solution s = new Solution();
