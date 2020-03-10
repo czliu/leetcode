@@ -36,6 +36,6 @@ class Solution {
         Solution s = new Solution();
         int[] nums = {2,3,5};
         List<List<Integer>> output = s.combinationSum(nums, 8);
-        for (List i:output) System.out.println(i);
+        for (List<Integer> i:output) System.out.println(i);
     }
 }
