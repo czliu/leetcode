@@ -4,7 +4,7 @@
 package interview01_06;
 
 // import java.util.*;
-git
+
 class Solution {
     public String compressString(String S) {
         if (S.isEmpty()) {
