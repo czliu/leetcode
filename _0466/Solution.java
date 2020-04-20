@@ -47,7 +47,7 @@ class Solution {
             // 剪枝
             // 查看该索引在之前是否已出现，出现即表示已经出现循环节，可以直接进行计算
             // 上一次出现该索引是在第j个s1中（同时可以说明第一个循环节的出现是从第j+1个s1开始的）
-            for (int j = 0; j < i && indexRecorder[j] == index; ++j) {
+            for (int j = 0; j < i && indexRecorder[j] == index;) {
                 // preCount: 记录循环节出现之前的s2出现的个数
                 int preCount = countRecorder[j];
                 // patternCount: 记录所有循环节构成的字符串中出现s2的个数
