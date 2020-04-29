@@ -8,7 +8,7 @@ package interview56_i;
 public class Solution {
 
     public int[] singleNumbers(int[] nums) {
-        int xor = 0, len = nums.length;
+        int xor = 0;
         for (int num : nums)
             xor ^= num;
         int diff = xor & (-xor);
