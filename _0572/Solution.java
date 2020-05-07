@@ -1,5 +1,6 @@
 // 0572. Subtree of Another Tree
-// BT 二叉树
+// *
+// #easy #binarytree
 
 package _0572;
 
