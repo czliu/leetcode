@@ -1,7 +1,7 @@
 // 0039. Combination Sum
-// 回溯法
-// 复习
-
+// *
+// #medium #backtrack
+// related : 0040. Combination Sum II
 
 package _0039;
 
@@ -24,7 +24,7 @@ class Solution {
             ans.add(new LinkedList<>(track));
             return;
         }
-        for(int i = start;i < candidates.length;i++){
+        for(int i = start;i < candidates.length;++i){
             if(target < candidates[i]) break;
             track.add(candidates[i]);
             backtrack(candidates,i,target-candidates[i],track);
