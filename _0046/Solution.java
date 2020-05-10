@@ -1,6 +1,7 @@
 // 0046. Permutations
-// backtrack
-// review
+// *
+// #medium #backtrack
+// related : 47. permutations II
 
 package _0046;
 
