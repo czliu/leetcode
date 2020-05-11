@@ -1,5 +1,7 @@
 // 0112. Path Sum
-// BST
+// #easy #binarytree
+// *
+// related : 113. Path sum II
 
 package _0112;
 
