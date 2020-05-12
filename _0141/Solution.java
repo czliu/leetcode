@@ -1,6 +1,7 @@
 // 0141. linked list cycle
 // #easy #2pointers
 // *
+// related: 0142. Linked list cycle II
 
 package _0141;
 
