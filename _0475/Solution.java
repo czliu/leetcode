@@ -1,6 +1,6 @@
 // 0475. Heaters
 // #easy
-//
+// -
 
 package _0475;
 
