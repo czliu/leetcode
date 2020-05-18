@@ -1,8 +1,7 @@
 // 0125. Valid palindrome
-
-// string; 正则表达式
-
-// review
+// #easy #regex
+// *
+// related: 0680. Valid palindrome II
 
 package _0125;
 
