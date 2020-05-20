@@ -1,6 +1,6 @@
 // 0532. K-diff pairs in an array
 // #easy
-// *
+// -
 
 package _0532;
 
