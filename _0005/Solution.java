@@ -1,6 +1,6 @@
 // 0005. longest palindromic substring
-// *
 // #medium
+// **
 
 package _0005;
 
