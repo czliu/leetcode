@@ -43,15 +43,9 @@ public class Solution {
     }
 
     public boolean check() {
-        Iterator iter = ori.entrySet().iterator(); 
-        while (iter.hasNext()) { 
-            Map.Entry entry = (Map.Entry) iter.next(); 
-            Character key = (Character) entry.getKey(); 
-            Integer val = (Integer) entry.getValue(); 
-            if (cur.getOrDefault(key, 0) < val) {
-                return false;
-            }
-        } 
+        for (Character c : ori.keySet()) {
+            if (cur.getOrDefault(c, 0) < ori.get(c)) return false;
+        }
         return true;
     }
     
