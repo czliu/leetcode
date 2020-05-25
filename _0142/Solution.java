@@ -2,6 +2,7 @@
 // #medium
 // *
 // related: 0141. Linked list cycle
+// related: 0287
 
 package _0142;
 
