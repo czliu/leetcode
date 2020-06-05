@@ -1,6 +1,7 @@
 // 874. 模拟行走机器人
 // #easy
-// *
+// **
+// Don't use Arrays as keys in a HashMap / HashSet!
 
 package _0874;
 
@@ -26,7 +27,7 @@ class Solution {
                     y += dir[1];
                     // Don't use Arrays as keys in a HashMap / HashSet! . 
                     // arrays use the default identity-based Object.hashCode() implementation and there's no way you can override that. 
-                    // Use a Set of Lists instead.
+                    // Use a Set of String or List instead.
                     // if (set.contains(new int[] {x, y})) {
                     //     x -= dir[0];
                     //     y -= dir[1];
