@@ -1,6 +1,6 @@
 // 0067. Add binary
-
-// string
+// #easy
+// -
 
 package _0067;
 
@@ -50,5 +50,24 @@ public class Solution {
         };
         String ans = new String(c);
         return ans;
+    }
+}
+
+class Solution2 {
+    public String addBinary(String a, String b) {
+        int carry = 0;
+        StringBuilder sb = new StringBuilder();
+        int indexA = a.length()-1, indexB = b.length()-1;
+        while (indexA >= 0 || indexB >= 0) {
+            int cur = 0;
+            if (indexA >= 0) cur += a.charAt(indexA--) - '0';
+            if (indexB >= 0) cur += b.charAt(indexB--) - '0';
+            cur += carry;
+            if (cur > 1) carry = 1;
+            else carry = 0;
+            sb.append(cur % 2);
+        }
+        if (carry == 1) sb.append("1");
+        return sb.reverse().toString();
     }
 }
