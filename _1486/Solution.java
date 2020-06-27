@@ -1,0 +1,15 @@
+// 1486. 数组异或操作
+// #easy
+// -
+
+package _1486;
+
+class Solution {
+    public int xorOperation(int n, int start) {
+        int ans = start;
+        for (int i=1;i<n;++i) {
+            ans = ans ^ (start + 2 * i);
+        }
+        return ans;
+    }
+}
