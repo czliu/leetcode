@@ -4,8 +4,6 @@
 
 package _1323;
 
-import java.util.Arrays;
-
 class Solution {
     public int maximum69Number (int num) {
         String s = String.valueOf(num);

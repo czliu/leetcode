@@ -15,8 +15,8 @@ package _1237;
  * };
  */
 
-import java.util.LinkedList;
-import java.util.List;
+//import java.util.LinkedList;
+//import java.util.List;
 
 //class Solution {
 //    public List<List<Integer>> findSolution(CustomFunction customfunction, int z) {

@@ -4,8 +4,6 @@
 
 package _0908;
 
-import java.sql.SQLOutput;
-
 class Solution {
     public int smallestRangeI(int[] A, int K) {
         int min = A[0], max = A[0];
@@ -22,5 +20,6 @@ class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
         int ans = s.smallestRangeI(new int[] {0,10}, 2);
+        System.out.println(ans);
     }
 }

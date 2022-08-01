@@ -4,8 +4,6 @@
 
 package _1021;
 
-import java.util.Stack;
-
 class Solution {
     public String removeOuterParentheses(String S) {
         int tmp = 0;

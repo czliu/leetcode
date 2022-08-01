@@ -6,11 +6,17 @@ package _1422;
 
 class Solution {
     public int maxScore(String s) {
-        int count0 = 0, count1 = 0;
+        // this will cause warnings since count0 is never used
+        // int count0 = 0, count1 = 0;
+        // for (int i=0;i<s.length();++i) {
+        //     if (s.charAt(i) == '0') ++count0;
+        //     else ++count1;
+        // }
+        int count1 = 0;
         for (int i=0;i<s.length();++i) {
-            if (s.charAt(i) == '0') ++count0;
-            else ++count1;
+            if (s.charAt(i) == '1') ++count1;
         }
+
         int max = 0;
         int left0 = 0, right1 = count1;
         for (int i=0;i<=s.length()-2;++i) {
