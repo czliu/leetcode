@@ -15,8 +15,9 @@ public class Solution {
             cur.clear();
             if (i == 0) {
                 cur.add(1);
-                // this is wrong
+                // this is wrong since it is only copying the reference
                 // pre = cur; 
+                // the following is the right way to do deep copy
                 pre = new ArrayList<>(cur);
             }
             else {
@@ -33,7 +34,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
         List<Integer> ans = new ArrayList<>();
-        ans = s.getRow(2);
+        ans = s.getRow(3);
         System.out.println(ans);
     }
 }
