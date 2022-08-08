@@ -4,6 +4,8 @@
 
 package _0300;
 
+// time complexity O(n^2)
+// space complexity O(n)
 class Solution {
     public int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {
