@@ -18,23 +18,14 @@ import structure.TreeNode;
 
 public class Solution {
 
-    boolean isMinVal = true;
-    int pre;
-
-    public boolean isValidBST(TreeNode root) {
-        return dfs(root);
+    public boolean check(TreeNode root, long minVal, long maxVal) {
+        if (root == null) return true;
+        if (root.val >= maxVal || root.val <= minVal) return false;
+        return check(root.left, minVal, root.val) && check(root.right, root.val, maxVal);
     }
-
-    private boolean dfs(TreeNode node){
-        if (node == null) return true;
-        if (isMinVal == true && node.left == null) {
-            pre = node.val;
-            isMinVal = false;
-        }
-        if (!dfs(node.left)) return false;
-        if (node.val <= pre) return false;
-        pre = node.val;
-        if (!dfs(node.right)) return false;
-        return true;
+        
+    public boolean isValidBST(TreeNode root) {
+        if(root == null) return true;
+        return check(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 }
